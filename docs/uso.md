@@ -2,29 +2,23 @@
 
 
 
-En esta sección se detallan las configuraciones prácticas para blindar los accesos remotos y filtrar las conexiones entrantes.
+En esta sección se detallan los comandos esenciales para inicializar un proyecto, guardar versiones y sincronizar el trabajo con un compañero.
 
 
 
-\## 1. Configuración del cortafuegos (UFW)
+\## 1. Inicialización y primer guardado local
 
 
 
-Definimos una política restrictiva por defecto (denegar todo el tráfico entrante y permitir el saliente) y abrimos únicamente los servicios autorizados:
+Para convertir una carpeta normal en un repositorio de Git y registrar tus primeros archivos:
 
 
 
 ```bash
 
-sudo ufw default deny incoming
+git init
 
-sudo ufw default allow outgoing
+git add .
 
-sudo ufw allow 22/tcp
-
-sudo ufw allow 80/tcp
-
-sudo ufw allow 443/tcp
-
-sudo ufw enable
+git commit -m "feat: estructura inicial del proyecto"
 

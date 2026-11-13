@@ -1,6 +1,6 @@
-﻿site_name: Guía Técnica de Seguridad en Linux
-site_author: Daniel Perez y Pedro Simth
-site_description: Manual de buenas prácticas, configuración segura y despliegue en servidores Linux.
+﻿site_name: Guía Técnica de Git y Control de Versiones
+site_author: Daniel Pérez y Pedro Smith
+site_description: Manual práctico de instalación, flujo de trabajo colaborativo y comandos esenciales de Git.ux.
 
 theme:
   name: material

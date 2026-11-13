@@ -1,22 +1,23 @@
-﻿# Introducción y Arquitectura
+﻿# Introducción y Arquitectura de Git
 
-La administración segura de servidores Linux es un pilar crítico en cualquier infraestructura IT moderna. Un sistema recién instalado suele incluir servicios innecesarios o configuraciones por defecto orientadas a la compatibilidad más que a la seguridad.
+**Git** es un sistema de control de versiones distribuido (DVCS) creado por Linus Torvalds que permite registrar cada cambio realizado sobre los archivos de un proyecto a lo largo del tiempo, facilitando el trabajo simultáneo de varios desarrolladores sin sobrescribir su código.
 
-## Principios fundamentales del Hardening
+## Los tres estados principales de Git
 
-1. **Principio de mínimo privilegio:** Cada usuario y servicio debe disponer únicamente de los permisos estrictamente necesarios.
-2. **Reducción de la superficie de ataque:** Desactivar puertos, demonios y paquetes que no cumplan una función activa.
-3. **Defensa en profundidad:** Combinar múltiples capas de seguridad (cortafuegos, autenticación por clave pública y monitorización de registros).
+Para dominar Git es fundamental comprender las tres áreas por las que pasan los archivos dentro de tu equipo local:
 
-## Esquema de arquitectura segura
+1. **Directorio de trabajo (*Working Directory*):** Es la carpeta visible donde editas, creas o borras tus archivos.
+2. **Área de preparación (*Staging Area / Index*):** Es una zona intermedia donde seleccionas qué cambios concretos formarán parte de la siguiente instantánea.
+3. **Repositorio local (`.git`):** Es la base de datos oculta donde Git almacena de forma permanente el historial completo de confirmaciones (*commits*).
 
-En el siguiente diagrama se muestra el flujo de filtrado de tráfico antes de alcanzar los servicios internos del servidor:
+## Esquema del flujo de trabajo
 
-![Esquema de arquitectura del servidor](img/arquitectura.png)
+En el siguiente diagrama se ilustra el recorrido de los cambios desde el directorio local hasta el repositorio remoto en la nube:
 
-??? note "Ver detalles sobre los puertos estándar monitorizados"
-    * **Puerto 22/TCP (SSH):** Administración remota cifrada (se recomienda cambiarlo a un puerto alto no estándar).
-    * **Puerto 80/TCP (HTTP):** Tráfico web inicial redirigido automáticamente a HTTPS.
-    * **Puerto 443/TCP (HTTPS):** Tráfico web cifrado mediante certificados TLS.
+![Arquitectura y flujo de trabajo de Git](img/arquitectura.png)
 
-Para ampliar información oficial sobre estándares de seguridad, consulta la [documentación oficial de Ubuntu Server](https://ubuntu.com/server/docs).
+??? note "Diferencia clave entre Git y GitHub"
+    * **Git** es la herramienta local que se instala en tu ordenador y gestiona el historial de versiones en la carpeta oculta `.git`.
+    * **GitHub** es la plataforma en la nube que aloja una copia remota de ese repositorio para compartirlo con compañeros, revisar cambios y publicarlo en Internet.
+
+Para profundizar en la referencia técnica oficial, consulta el [libro oficial Pro Git](https://git-scm.com/book/es/v2).
